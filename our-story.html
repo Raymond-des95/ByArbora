@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Story – Arbora</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f7f4;
+      color: #4a3c2f;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .story-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    .hero-image {
+  position: relative;
+  background: url('Images/ourstory-banner.jpg') center 30% / cover no-repeat;
+  height: 50vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  filter: grayscale(30%) brightness(85%);
+}
+
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      width: 100%;
+    }
+
+    .hero-overlay h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigatiebalk -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="Images/logo-arbora.png" alt="Arbora logo" height="90" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon bg-light rounded"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Our Story</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <!-- Hero Image -->
+  <div class="hero-image">
+    <div class="hero-overlay">
+      <h1>Our Story</h1>
+    </div>
+  </div>
+
+  <!-- Story Content -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <div class="story-content">
+        <p>
+          Arbora was founded by <strong>Raymond</strong> and <strong>Daimy</strong> — a couple with a shared love for wood, nature, and meaningful craftsmanship. From their home and garden in Limburg, they started creating small wooden pieces using reclaimed materials and honest tools.
+        </p>
+        <p>
+          What began as a creative hobby quickly grew into a way of life: restoring old furniture, designing timeless wooden objects, and bringing new life into forgotten materials. Each piece is made with care, telling a story of simplicity, sustainability, and purpose.
+        </p>
+        <p>
+          Arbora stands for more than design — it's about slowing down, choosing quality, and staying close to the essence of things. Everything is handcrafted, locally made, and created with respect for nature and tradition.
+        </p>
+        <p>
+          Welcome to our journey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+     <!-- Volg ons sectie -->
+    <section id="socials" class="py-5 text-center">
+        <div class="container">
+            <h2 class="section-title mb-4">Follow Arbora</h2>
+            <p>Stay connected and see our latest creations and projects on social media.</p>
+            <div class="social-icons fs-2 mt-3">
+                <a href="https://www.instagram.com/byarbora" target="_blank" rel="noopener" aria-label="Instagram"
+                    class="me-3 text-dark">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Footer -->
+<footer class="bg-light text-center text-md-start py-4 border-top">
+  <div class="container d-md-flex justify-content-between align-items-center">
+    <div class="mb-3 mb-md-0">
+      <p class="mb-1 fw-semibold">&copy; 2025 By Arbora – Timeless care</p>
+      <p class="mb-0 text-muted" style="font-size: 0.9rem;">Yes, we made this website ourselves — with code, not with wood of course.</p>
+    </div>
+    <div>
+      <p class="mb-1 fw-semibold">Contact</p>
+      <p class="mb-0 text-muted" style="font-size: 0.9rem;">Raymond & Daimy Hochstenbach</p>
+      <p class="mb-0">
+        <a href="mailto:info@arbora.nl" class="text-decoration-none text-dark">info@byarbora.com</a> |
+        <a href="tel:+31628755981" class="text-decoration-none text-dark">+31 (6) 28 75 59 81</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>

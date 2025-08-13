@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+body {
+    padding-top: 56px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: var(--arbora-beige);
+    color: #333;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--arbora-bruin) !important;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+        url("Images/w07961-small.jpg") center/cover no-repeat;
+
+    color: var(--arbora-bruin);
+    text-align: center;
+    padding: 120px 5px;
+    border-bottom: 5px solid var(--arbora-accent);
+}
+
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    letter-spacing: 0.1em;
+    /* 0.1em is een mooie lichte spacing */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+    max-width: 90vw;
+    word-wrap: break-word;
+}
+
+/* Mobiel: kleinere letters */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 4rem;
+        /* Aangepaste kleinere grootte */
+        letter-spacing: 0.1em;
+        /* iets minder spacing op mobiel */
+        max-width: 95vw;
+    }
+}
+
+.hero p.lead {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #4a3b2a;
+}
+
+.section-title {
+    color: var(--arbora-bruin);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    border-bottom: 2px solid var(--arbora-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section {
+    background-color: var(--arbora-groen);
+    padding: 4rem 0;
+    border-radius: 16px;
+    margin: 2rem 0;
+}
+
+footer {
+    background-color: var(--arbora-lichtgroen);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--arbora-bruin);
+    border-top: 3px solid var(--arbora-accent);
+}
+
+#arbora-text,
+#slogan-text {
+    transition: opacity 1.5s ease-in;
+}
+
+h2.display-3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  color: #8b5e3c;
+}
+
