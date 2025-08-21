@@ -162,7 +162,7 @@ h2.display-3 {
     overflow-x: auto;
     gap: 15px;
     scroll-behavior: smooth;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
   }
 
   .portfolio-grid::-webkit-scrollbar {
