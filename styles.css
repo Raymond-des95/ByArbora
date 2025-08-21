@@ -108,3 +108,85 @@ h2.display-3 {
     letter-spacing: 0.05em;
     color: #8b5e3c;
 }
+/* Portfolio items styling */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover::after {
+  opacity: 1;
+}
+
+/* Desktop grid */
+@media (min-width: 768px) {
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Mobiel horizontaal scroll */
+@media (max-width: 767px) {
+  .portfolio-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+  }
+
+  .portfolio-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .portfolio-grid::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 4px;
+  }
+
+  .portfolio-item {
+    min-width: 70%; /* breedte van elk item op mobiel */
+  }
+}
+
+/* Icoon groter maken */
+.social-icons i {
+    font-size: 3.5rem; /* groter dan fs-2 */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover-effect */
+.social-icons a.social-link:hover i {
+    color: #E1306C; /* Instagram roze */
+    transform: scale(1.2); /* iets groter bij hover */
+}
