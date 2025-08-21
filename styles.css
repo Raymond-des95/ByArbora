@@ -175,9 +175,23 @@ h2.display-3 {
   }
 
   .portfolio-item {
-    min-width: 70%; /* breedte van elk item op mobiel */
+    min-width: 80%; /* iets breder zodat scrollen beter voelt */
+    height: auto;   /* hoogte wordt automatisch bepaald */
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: auto;       /* hoogte automatisch, niet te veel ingezoomd */
+    max-height: 400px;  /* limiet zodat ze niet te groot worden */
+    object-fit: cover;  /* blijft netjes gecropt */
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover img {
+    transform: scale(1.05); /* subtiele zoom op mobiel */
   }
 }
+
 
 /* Icoon groter maken */
 .social-icons i {
