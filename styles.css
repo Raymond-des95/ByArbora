@@ -158,10 +158,11 @@ h2.display-3 {
 /* Mobiel horizontaal scroll */
 @media (max-width: 767px) {
   .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    grid-auto-rows: 600px;
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
   }
 
   .portfolio-grid::-webkit-scrollbar {
