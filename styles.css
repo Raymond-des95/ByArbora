@@ -184,7 +184,7 @@ h2.display-3 {
 
   .portfolio-item img {
     width: 100%;
-    height: auto;      /* geen vaste hoogte */
+    height: 600px;      /* geen vaste hoogte */
     object-fit: contain; /* afbeelding past volledig in de container */
     transition: transform 0.3s ease;
   }
