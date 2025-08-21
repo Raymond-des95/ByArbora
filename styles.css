@@ -175,22 +175,25 @@ h2.display-3 {
   }
 
   .portfolio-item {
-    min-width: 80%; /* iets breder zodat scrollen beter voelt */
-    height: auto;   /* hoogte wordt automatisch bepaald */
+    flex: 0 0 90%; /* elk item neemt 90% van het scherm, niet te breed */
+    max-width: 90%; 
+    height: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
 
   .portfolio-item img {
     width: 100%;
-    height: auto;       /* hoogte automatisch, niet te veel ingezoomd */
-    max-height: 400px;  /* limiet zodat ze niet te groot worden */
-    object-fit: cover;  /* blijft netjes gecropt */
+    height: auto;      /* geen vaste hoogte */
+    object-fit: contain; /* afbeelding past volledig in de container */
     transition: transform 0.3s ease;
   }
 
   .portfolio-item:hover img {
-    transform: scale(1.05); /* subtiele zoom op mobiel */
+    transform: scale(1.02); /* zeer subtiele zoom voor mobiel */
   }
 }
+
 
 
 /* Icoon groter maken */
