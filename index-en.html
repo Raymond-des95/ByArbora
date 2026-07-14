@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Eigen CSS -->
+    <!-- Own CSS -->
     <link href="styles.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link
@@ -22,13 +22,12 @@
     <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon.png">
 
-    <!-- Optioneel: Safari pinned tab (SVG) -->
-    <!-- <link rel="mask-icon" href="Images/favicon.svg" color="#5bbad5"> -->
 </head>
+
 
 <body>
 
-    <!-- Navigatiebalk -->
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
@@ -43,22 +42,21 @@
                     <li class="nav-item"><a class="nav-link" href="#koop">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="our-story-en.html">Our Story</a></li>
                     <li class="nav-item">
-                        <!-- Engelse pagina -->
                         <button id="lang-toggle" class="btn btn-outline-secondary btn-sm ms-3"
                             onclick="window.location.href='index.html'">NL</button>
-
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+
     <!-- Hero section -->
     <section class="hero">
         <div class="container">
             <h1 id="arbora-text" style="opacity:0;">ARBORA</h1>
             <p id="slogan-text" class="lead" style="opacity:0; margin-top: 20px;">
-                Old and new types of wood combined with timeless care.
+                Bringing old and new wood species together with timeless care.
             </p>
         </div>
         <div class="social-icons fs-2 mt-3">
@@ -69,134 +67,444 @@
         </div>
     </section>
 
-    <!-- Over sectie -->
+
+    <!-- About section -->
     <section id="over" class="py-5 ">
         <div class="container">
-            <h2 class="section-title">What is Arbora ?</h2>
-            <p><em>Arbora</em> means <strong>trees</strong> — a name that perfectly suits a brand working with wood in
-                all its forms. Based in Limburg, we create beautiful wooden products by combining reclaimed wood and new
-                timber, resulting in timeless pieces.</p>
+            <h2 class="section-title">What is Arbora?</h2>
+
             <p>
-                We craft unique, custom wood designs with attention to detail and skilled craftsmanship. Sustainability
-                and quality are at the heart of everything we do, ensuring that each piece tells its own story and fits
-                perfectly in or around your home or workspace.
+                <em>Arbora</em> is derived from the Latin word for <strong>trees</strong>. A name that perfectly reflects
+                our craft and passion: creating unique products where wood takes center stage.
             </p>
-            <p>Choose Arbora: for authentic woodwork that brings nature indoors.</p>
+
+            <p>
+                From Limburg, we design and create custom-made pieces for both interior and exterior spaces with care and
+                craftsmanship. Whenever possible, we combine characterful reclaimed wood with high-quality new timber,
+                giving every project its own identity and story. Whether it is a walnut dining table, a stylish custom
+                cabinet, a complete interior project, or a unique piece of furniture, every design is created with attention
+                to detail.
+            </p>
+
+            <p>
+                At Arbora, we believe wood is more than just a material. It brings warmth, character, and atmosphere into
+                every space. That is why we choose sustainable materials, high-quality finishes, and solutions that are
+                designed to last for years.
+            </p>
+
+            <p>
+                Our possibilities are extensive. From complete custom interiors and outdoor projects to tables, cabinets,
+                lighting, planters, and other unique wooden creations. Do you have your own idea or a specific request?
+                We are happy to think along with you and translate your vision into a design that perfectly matches your
+                home, garden, or business.
+            </p>
+
+            <p>
+                <strong>
+                    Arbora stands for honest craftsmanship, natural materials, and custom work built to last for
+                    generations.
+                </strong>
+            </p>
 
         </div>
     </section>
 
-    <!-- Portfolio section -->
-    <section id="portfolio" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title mb-4 text-center">Inspiration</h2>
+    <!-- Featured projects -->
 
-            <!-- Wrapper for grid / scroll -->
-            <div class="portfolio-grid">
+<section id="projects" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-3">Featured projects</h2>
 
-                <div class="portfolio-item" data-title="Strongly anchored, from the Port of Rotterdam.">
-                    <img src="Images/Zuil4.jpg" alt="Strongly anchored, from the Port of Rotterdam.">
-                </div>
-                <div class="portfolio-item" data-title="Custom coffee table">
-                    <img src="Images/IntrieurInspiratie01.jpg"
-                        alt="Custom coffee table, made from weathered wagon planks.">
-                </div>
-                <div class="portfolio-item" data-title="Custom staircase railing, from our own forest.">
-                    <img src="Images/Trapleuning.jpg" alt="Custom staircase railing, from our own forest.">
+        <p class="text-center mb-5">
+            Every project tells its own story. From robust oak tables and custom cabinets to complete interior and exterior projects. Below you will find a selection of projects we are proud to have worked on.
+        </p>
+
+        <div class="row g-4">
+
+            <!-- Project 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div id="project1Carousel" class="carousel slide" data-bs-touch="true" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/BarberShop.jpg" class="card-img-top d-block w-100" alt="Barbershop interior">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/BarberShop.jpg" class="card-img-top d-block w-100" alt="Barbershop interior">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/BarberShop.jpg" class="card-img-top d-block w-100" alt="Barbershop interior">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#project1Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#project1Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Custom interior barbershop</h5>
+                        <p class="card-text">
+                            At Welling's Barbershop in Maastricht, we created a unique interior. The design was created by DK-Design and brought to life by us. The result is a stylish and functional space that perfectly matches the vision of the barbershop.
+                        </p>
+                    </div>
+
                 </div>
             </div>
+
+
+            <!-- Project 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div id="project2Carousel" class="carousel slide" data-bs-touch="true" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/SpoorbielsBank.jpg" class="card-img-top d-block w-100" alt="Railway sleeper bench">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/SpoorbielsBank2.jpg" class="card-img-top d-block w-100" alt="Railway sleeper bench">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/SpoorbielsBank3.jpg" class="card-img-top d-block w-100" alt="Railway sleeper bench">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#project2Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#project2Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Railway sleeper bench</h5>
+                        <p class="card-text">
+                            A robust outdoor or indoor bench made from authentic railway sleepers with a timeless appearance. The design combines durability with a natural aesthetic, making it a perfect addition to any garden or interior.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Project 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div id="project3Carousel" class="carousel slide" data-bs-touch="true" data-bs-ride="false">
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <img src="Images/KastProject.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject2.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject3.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject4.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject5.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject6.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject7.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject8.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject9.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Images/KastProject10.jpg" class="card-img-top d-block w-100" alt="Custom cabinet">
+                            </div>
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#project3Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#project3Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Custom basement interior</h5>
+                        <p class="card-text">
+                            A complete custom-designed basement, including stairs, walls, and cabinets. The result is a functional and stylish space that makes optimal use of the available area, with great attention to detail and finishing.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Contact / Interest section -->
+
+<section id="contact" class="py-5 bg-white">
+    <div class="container text-center">
+
+        <h2 class="section-title mb-4">From idea to unique final result</h2>
+
+        <p class="mb-4 text-justify">
+            Do you have a specific piece of furniture or a complete custom project in mind? At Arbora, we are happy to think along with you. From the first sketch to the final delivery, we work together on a design that completely matches your wishes, style, and space.
+        </p>
+
+        <p class="mb-4 text-justify">
+            We create custom cabinets, tables, TV units, outdoor furniture, complete interior and exterior solutions, and other unique wooden creations. Every project is carefully designed and crafted using high-quality materials, allowing you to enjoy a product that truly fits your needs for many years.
+        </p>
+
+        <p class="mb-4">
+            Because almost every project is fully customized, we do not operate as a traditional webshop. Personal contact, honest advice, and craftsmanship are at the heart of what we do. Together, we discuss the possibilities and create a design that fits your wishes and budget.
+        </p>
+
+        <p class="mt-3 text-muted">
+            Curious about the possibilities? Feel free to contact us or schedule an appointment. We would love to think along with you.
+        </p>
 
 
-    <!-- Purchase / Interest section -->
-    <section id="koop" class="py-5 bg-white">
-        <div class="container text-center">
-            <h2 class="section-title mb-4">Crafted Wood, Your Personal Style</h2>
-            <p class="mb-4 text-justify">
-                All our designs are carefully handcrafted or left as they are meant to be. We work with sustainable,
-                high-quality materials. From small accessories to large pieces: everything is unique and can be
-                customized to your wishes.</p>
+        <!-- Call-to-actions -->
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
 
-            <p class="mb-4">
-                Would you like to purchase an existing piece or discuss a custom project? We are happy to help create
-                something that perfectly suits you. We are not a standard webshop—personal attention and quality come
-                first.
+            <a href="mailto:info@byarbora.com" class="btn btn-outline-secondary btn-lg">
+                E-mail
+            </a>
+
+            <a href="https://wa.me/31628755981" target="_blank" class="btn btn-success btn-lg">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+
+            <a href="tel:+31628755981" class="btn btn-outline-secondary btn-lg">
+                Call us
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Additional featured projects -->
+
+<section id="projects-extra" class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="section-title text-center mb-3">
+            More projects
+        </h2>
+
+
+        <div class="row g-4">
+
+
+            <!-- Project 4 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <img src="Images/WijnTafel.jpg" class="card-img-top" alt="Wine tasting table">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Wine tasting table
+                        </h5>
+
+                        <p class="card-text">
+                            A robust Douglas wood table, perfect for wine tastings and informative gatherings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Project 5 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <img src="Images/TeakVlonder.jpg" class="card-img-top" alt="Teak wooden decking">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Teak wooden decking
+                        </h5>
+
+                        <p class="card-text">
+                            To give the swimming pool a luxurious appearance, we created a teak wooden deck. The result is a stylish and durable outdoor space that perfectly blends with its surroundings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Project 6 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <img src="Images/BuitenKast.jpg" class="card-img-top" alt="Custom outdoor cabinet">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Custom outdoor cabinet
+                        </h5>
+
+                        <p class="card-text">
+                            This cabinet was custom-made to perfectly match the beautiful exterior wall. The result is a functional and stylish storage solution that fits seamlessly with the restaurant.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Follow us section -->
+
+<section id="socials" class="py-5 text-center">
+    <div class="container">
+
+        <h2 class="section-title mb-4">
+            Follow Arbora
+        </h2>
+
+        <p>
+            Stay updated and discover our latest creations and projects on social media.
+        </p>
+
+        <div class="social-icons fs-2 mt-3">
+
+            <a href="https://www.instagram.com/byarbora" 
+               target="_blank" 
+               rel="noopener" 
+               aria-label="Instagram"
+               class="me-3 text-dark social-link">
+
+                <i class="bi bi-instagram"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+
+<footer class="bg-light text-center text-md-start py-4 border-top">
+
+    <div class="container d-md-flex justify-content-between align-items-center">
+
+
+        <div class="mb-3 mb-md-0">
+
+            <p class="mb-1 fw-semibold">
+                &copy; 2025 By Arbora – Timeless care
             </p>
 
-            <p class="mt-3 text-muted">
-                You can also schedule an appointment to discuss the possibilities.
+            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                Yes, we made this website ourselves — with code, not with wood of course.
             </p>
-            <!-- Call-to-actions -->
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="mailto:info@byarbora.com" class="btn btn-outline-secondary btn-lg">Email</a>
-                <a href="https://wa.me/31628755981" target="_blank" class="btn btn-success btn-lg">
-                    <i class="bi bi-whatsapp"></i> WhatsApp
+
+        </div>
+
+
+
+        <div>
+
+            <p class="mb-1 fw-semibold">
+                Contact
+            </p>
+
+            <p class="mb-0 text-muted">
+                Raymond & Daimy Hochstenbach
+            </p>
+
+            <p class="mb-0">
+
+                <a href="mailto:info@byarbora.com" 
+                   class="text-decoration-none text-dark">
+                    info@byarbora.com
                 </a>
-                <a href="tel:+31628755981" class="btn btn-outline-secondary btn-lg">Call us</a>
-            </div>
 
-        </div>
-    </section>
+                |
 
-    <!-- Portfolio section -->
-    <section id="portfolio" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title mb-4 text-center">Inspiration</h2>
-
-            <!-- Wrapper for grid / scroll -->
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-title="Custom-made for our client.">
-                    <img src="Images/TafelSom.jpg" alt="Custom-made for our client.">
-                </div>
-                <div class="portfolio-item" data-title="Every grain tells a story.">
-                    <img src="Images/Zuil2.jpg" alt="Every grain tells a story.">
-                </div>
-                <div class="portfolio-item" data-title="History in every scratch and groove.">
-                    <img src="Images/Timmertafel.jpg" alt="History in every scratch and groove.">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Volg ons sectie -->
-    <section id="socials" class="py-5 text-center">
-        <div class="container">
-            <h2 class="section-title mb-4">Follow Arbora</h2>
-            <p>Stay connected and see our latest creations and projects on social media.</p>
-            <div class="social-icons fs-2 mt-3">
-                <a href="https://www.instagram.com/byarbora" target="_blank" rel="noopener" aria-label="Instagram"
-                    class="me-3 text-dark social-link">
-                    <i class="bi bi-instagram"></i>
+                <a href="tel:+31628755981" 
+                   class="text-decoration-none text-dark">
+                    +31 (6) 28 75 59 81
                 </a>
-            </div>
+
+            </p>
+
         </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- Footer -->
-    <footer class="bg-light text-center text-md-start py-4 border-top">
-        <div class="container d-md-flex justify-content-between align-items-center">
-            <div class="mb-3 mb-md-0">
-                <p class="mb-1 fw-semibold">&copy; 2025 By Arbora – Timeless care</p>
-                <p class="mb-0 text-muted" style="font-size: 0.9rem;">Yes, we made this website ourselves — with code,
-                    not with wood of course.</p>
-            </div>
-            <div>
-                <p class="mb-1 fw-semibold">Contact</p>
-                <p class="mb-0 text-muted" style="font-size: 0.9rem;">Raymond & Daimy Hochstenbach</p>
-                <p class="mb-0">
-                    <a href="mailto:info@arbora.nl" class="text-decoration-none text-dark">info@byarbora.com</a> |
-                    <a href="tel:+31628755981" class="text-decoration-none text-dark">+31 (6) 28 75 59 81</a>
-                </p>
-            </div>
-        </div>
-    </footer>
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Eigen JS -->
-    <script src="scripts.js"></script>
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Own JS -->
+
+<script src="scripts.js"></script>
+
+
 </body>
 
 </html>
