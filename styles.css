@@ -206,3 +206,16 @@ h2.display-3 {
     color: #E1306C; /* Instagram roze */
     transform: scale(1.2); /* iets groter bij hover */
 }
+
+
+.card .carousel-item img {
+    height: 380px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
+    padding: 18px;
+}
