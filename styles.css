@@ -1,213 +1,340 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+/* ============================================================
+   ARBORA — design tokens
+   Palette, type and layout tuned for an "ambachtelijk" (artisanal)
+   woodworking studio: aged wood, workshop labels, brass hardware.
+   Variable names are kept the same as the previous stylesheet
+   (--arbora-*) so index-en.html / our-story.html keep working and
+   automatically inherit this palette — consider renaming them to
+   the descriptive aliases below next time you touch those pages.
+   ============================================================ */
 
-body {
-    padding-top: 56px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background-color: var(--arbora-beige);
-    color: #333;
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+    /* legacy names, new values */
+    --arbora-beige: #ECE4D2;       /* warm linen background */
+    --arbora-bruin: #3B2A1D;       /* ink-walnut, primary text/brand */
+    --arbora-groen: #F7F2E6;       /* section surface (kept name for compatibility) */
+    --arbora-lichtgroen: #F1EAD8;  /* lighter surface */
+    --arbora-accent: #8C6A32;      /* aged brass accent */
+
+    /* descriptive aliases, same values */
+    --ink: var(--arbora-bruin);
+    --linen: var(--arbora-beige);
+    --surface: var(--arbora-groen);
+    --surface-light: var(--arbora-lichtgroen);
+    --brass: var(--arbora-accent);
+    --oak: #A9754C;
+    --walnut-dark: #2A1D14;
+    --cream: #FBF8F0;
+
+    --font-display: 'Fraunces', 'Playfair Display', serif;
+    --font-body: 'IBM Plex Sans', 'Montserrat', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 72px;
+    font-family: var(--font-body);
+    background-color: var(--linen);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: var(--brass);
+    color: var(--cream);
+}
+
+a {
+    color: var(--ink);
+}
+
+/* ---------- Navbar ---------- */
 .navbar {
-    background-color: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    background-color: var(--cream);
+    border-bottom: 1px solid rgba(59, 42, 29, 0.15);
+    box-shadow: none;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
 }
 
 .navbar-brand,
 .nav-link {
-    color: var(--arbora-bruin) !important;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    color: var(--ink) !important;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -2px;
+    height: 2px;
+    background: var(--brass);
+    transition: right 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    right: 0;
 }
 
 #lang-toggle {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: var(--arbora-bruin);
-    border-color: var(--arbora-bruin);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    border-color: var(--ink);
+    border-radius: 2px;
 }
 
 #lang-toggle:hover {
-    background-color: var(--arbora-accent);
-    color: white;
-    border-color: var(--arbora-accent);
+    background-color: var(--brass);
+    color: var(--cream);
+    border-color: var(--brass);
 }
 
+/* ---------- Hero ---------- */
 .hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    position: relative;
+    background:
+        linear-gradient(160deg, rgba(30, 21, 14, 0.82), rgba(43, 30, 20, 0.55) 55%, rgba(30, 21, 14, 0.85)),
         url("Images/w07961-small.jpg") center/cover no-repeat;
-
-    color: var(--arbora-bruin);
+    color: var(--cream);
     text-align: center;
-    padding: 120px 5px;
-    border-bottom: 5px solid var(--arbora-accent);
+    padding: 150px 20px 90px;
+    border-bottom: none;
+    overflow: hidden;
 }
 
+.hero-eyebrow {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oak);
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: fadeUp 0.9s ease-out forwards;
+    animation-delay: 0.1s;
+}
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 7rem;
-    letter-spacing: 0.1em;
-    /* 0.1em is een mooie lichte spacing */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(3.2rem, 9vw, 7rem);
+    letter-spacing: 0.02em;
     margin: 0 auto;
     max-width: 90vw;
     word-wrap: break-word;
-}
-
-/* Mobiel: kleinere letters */
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 4rem;
-        /* Aangepaste kleinere grootte */
-        letter-spacing: 0.1em;
-        /* iets minder spacing op mobiel */
-        max-width: 95vw;
-    }
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 .hero p.lead {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-body);
     font-weight: 400;
-    font-size: 1.25rem;
-    color: #4a3b2a;
+    font-size: 1.15rem;
+    color: #E6DCC8;
+    margin-top: 18px;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.6s;
 }
 
+.grain-divider {
+    display: block;
+    width: 120px;
+    height: 18px;
+    margin: 2rem auto 0;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.85s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow, .hero h1, .hero p.lead, .grain-divider, .reveal {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ---------- Sections ---------- */
 .section-title {
-    color: var(--arbora-bruin);
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    border-bottom: 2px solid var(--arbora-accent);
-    padding-bottom: 0.5rem;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 0.75rem;
     margin-bottom: 1.5rem;
 }
 
+.section-title::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: var(--brass);
+    margin-top: 0.6rem;
+}
+
+.section-title.text-center::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-eyebrow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 0.5rem;
+}
+
 section {
-    background-color: var(--arbora-groen);
-    padding: 4rem 0;
-    border-radius: 16px;
-    margin: 2rem 0;
+    background-color: var(--surface);
+    padding: 4.5rem 0;
+    border-radius: 0;
+    margin: 0;
 }
 
-footer {
-    background-color: var(--arbora-lichtgroen);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--arbora-bruin);
-    border-top: 3px solid var(--arbora-accent);
+section#over,
+section.bg-white {
+    background-color: var(--cream);
 }
 
-#arbora-text,
-#slogan-text {
-    transition: opacity 1.5s ease-in;
+section#projecten {
+    background-color: var(--surface-light);
 }
 
-h2.display-3 {
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.05em;
-    color: #8b5e3c;
-}
-/* Portfolio items styling */
-.portfolio-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  flex-shrink: 0;
+/* thin wood-grain rule between sections instead of hard edges */
+section + section {
+    position: relative;
 }
 
-.portfolio-item img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+section + section::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(59, 42, 29, 0.18) 0px,
+        rgba(59, 42, 29, 0.18) 6px,
+        transparent 6px,
+        transparent 14px
+    );
 }
 
-.portfolio-item:hover img {
-  transform: scale(1.1);
-}
-
-.portfolio-item::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  text-align: center;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover::after {
-  opacity: 1;
-}
-
-/* Desktop grid */
-@media (min-width: 768px) {
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-}
-
-/* Mobiel horizontaal scroll */
-@media (max-width: 767px) {
-  .portfolio-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    scroll-behavior: smooth;
-    padding-bottom: 10px;
-  }
-
-  .portfolio-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .portfolio-grid::-webkit-scrollbar-thumb {
-    background: #aaa;
+/* ---------- Project cards & material tags ---------- */
+.project-card {
+    background: var(--cream);
     border-radius: 4px;
-  }
-
-  .portfolio-item {
-    flex: 0 0 90%; /* elk item neemt 90% van het scherm, niet te breed */
-    max-width: 90%; 
-    height: auto;
-    border-radius: 0.5rem;
-    overflow: hidden;
-  }
-
-  .portfolio-item img {
-    width: 100%;
+    overflow: visible;
+    box-shadow: 0 1px 2px rgba(43, 30, 20, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
     height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px -12px rgba(43, 30, 20, 0.28);
+}
+
+.project-media {
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+}
+
+.project-media img {
+    height: 380px;
     object-fit: cover;
-  }
-
-  .portfolio-item:hover img {
-    transform: scale(1.02); /* zeer subtiele zoom voor mobiel */
-  }
+    width: 100%;
+    display: block;
 }
 
-
-
-/* Icoon groter maken */
-.social-icons i {
-    font-size: 3.5rem; /* groter dan fs-2 */
-    transition: transform 0.3s ease, color 0.3s ease;
+/* the signature element: a rotated workshop-style material tag */
+.material-tag {
+    position: absolute;
+    top: 14px;
+    right: -6px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    padding: 6px 12px 6px 10px;
+    border-radius: 2px;
+    transform: rotate(4deg);
+    box-shadow: 0 6px 14px rgba(20, 14, 9, 0.35);
+    transition: transform 0.35s ease;
 }
 
-/* Hover-effect */
-.social-icons a.social-link:hover i {
-    color: #E1306C; /* Instagram roze */
-    transform: scale(1.2); /* iets groter bij hover */
+.material-tag::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: var(--cream);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: inset 0 0 0 1.5px var(--ink);
 }
 
+.project-card:hover .material-tag {
+    transform: rotate(-2deg) translateY(-2px);
+}
+
+.card-title.h5,
+.project-card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1.15rem;
+}
+
+.project-card .card-text {
+    color: #4A3B2C;
+    font-size: 0.95rem;
+}
 
 .card .carousel-item img {
     height: 380px;
@@ -216,229 +343,182 @@ h2.display-3 {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(20, 14, 9, 0.5);
     border-radius: 50%;
     padding: 18px;
-=======
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap');
-
-body {
-    padding-top: 56px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background-color: var(--arbora-beige);
-    color: #333;
 }
 
-.navbar {
-    background-color: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+/* ---------- Scroll reveal ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.navbar-brand,
-.nav-link {
-    color: var(--arbora-bruin) !important;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-#lang-toggle {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: var(--arbora-bruin);
-    border-color: var(--arbora-bruin);
+/* ---------- Buttons ---------- */
+.btn-outline-secondary {
+    color: var(--ink);
+    border-color: var(--ink);
+    border-radius: 2px;
+    font-family: var(--font-body);
+    font-weight: 500;
 }
 
-#lang-toggle:hover {
-    background-color: var(--arbora-accent);
-    color: white;
-    border-color: var(--arbora-accent);
+.btn-outline-secondary:hover {
+    background-color: var(--ink);
+    border-color: var(--ink);
+    color: var(--cream);
 }
 
-.hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-        url("Images/w07961-small.jpg") center/cover no-repeat;
-
-    color: var(--arbora-bruin);
-    text-align: center;
-    padding: 120px 5px;
-    border-bottom: 5px solid var(--arbora-accent);
+.btn-success {
+    background-color: #3E5C3A;
+    border-color: #3E5C3A;
+    border-radius: 2px;
+    font-weight: 500;
 }
 
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 7rem;
-    letter-spacing: 0.1em;
-    /* 0.1em is een mooie lichte spacing */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    margin: 0 auto;
-    max-width: 90vw;
-    word-wrap: break-word;
+.btn-success:hover {
+    background-color: #324A2F;
+    border-color: #324A2F;
 }
 
-/* Mobiel: kleinere letters */
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 4rem;
-        /* Aangepaste kleinere grootte */
-        letter-spacing: 0.1em;
-        /* iets minder spacing op mobiel */
-        max-width: 95vw;
-    }
+/* ---------- Order-slip CTA panel ---------- */
+.order-slip {
+    background: var(--cream);
+    border: 1px dashed rgba(59, 42, 29, 0.35);
+    border-radius: 6px;
+    padding: 3rem 2rem;
 }
 
-.hero p.lead {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
-    color: #4a3b2a;
+.cta-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-top: 0.5rem;
 }
 
-.section-title {
-    color: var(--arbora-bruin);
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    border-bottom: 2px solid var(--arbora-accent);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-section {
-    background-color: var(--arbora-groen);
-    padding: 4rem 0;
-    border-radius: 16px;
-    margin: 2rem 0;
-}
-
-footer {
-    background-color: var(--arbora-lichtgroen);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--arbora-bruin);
-    border-top: 3px solid var(--arbora-accent);
-}
-
-#arbora-text,
-#slogan-text {
-    transition: opacity 1.5s ease-in;
-}
-
-h2.display-3 {
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.05em;
-    color: #8b5e3c;
-}
-/* Portfolio items styling */
-.portfolio-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  flex-shrink: 0;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.1);
-}
-
-.portfolio-item::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  text-align: center;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover::after {
-  opacity: 1;
-}
-
-/* Desktop grid */
-@media (min-width: 768px) {
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-}
-
-/* Mobiel horizontaal scroll */
-@media (max-width: 767px) {
-  .portfolio-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    scroll-behavior: smooth;
-    padding-bottom: 10px;
-  }
-
-  .portfolio-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .portfolio-grid::-webkit-scrollbar-thumb {
-    background: #aaa;
-    border-radius: 4px;
-  }
-
-  .portfolio-item {
-    flex: 0 0 90%; /* elk item neemt 90% van het scherm, niet te breed */
-    max-width: 90%; 
-    height: auto;
-    border-radius: 0.5rem;
-    overflow: hidden;
-  }
-
-  .portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .portfolio-item:hover img {
-    transform: scale(1.02); /* zeer subtiele zoom voor mobiel */
-  }
-}
-
-
-
-/* Icoon groter maken */
+/* ---------- Socials ---------- */
 .social-icons i {
-    font-size: 3.5rem; /* groter dan fs-2 */
+    font-size: 3rem;
+    color: var(--ink);
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Hover-effect */
 .social-icons a.social-link:hover i {
-    color: #E1306C; /* Instagram roze */
-    transform: scale(1.2); /* iets groter bij hover */
+    color: var(--brass);
+    transform: scale(1.15) rotate(-4deg);
 }
 
-
-.card .carousel-item img {
-    height: 380px;
-    object-fit: cover;
+/* ---------- Footer ---------- */
+footer.site-footer {
+    background-color: var(--walnut-dark);
+    color: var(--cream);
+    padding: 2.5rem 0;
+    text-align: left;
+    font-size: 0.92rem;
+    font-family: var(--font-body);
+    border-top: 3px solid var(--brass);
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.45);
-    border-radius: 50%;
-    padding: 18px;
->>>>>>> 3f0896a5a414eba75202eb9ba20235fe9322784d
+footer.site-footer a {
+    color: var(--cream);
+}
+
+footer.site-footer .text-muted {
+    color: #C9BBA3 !important;
+}
+
+footer.site-footer .fw-semibold {
+    font-family: var(--font-display);
+}
+
+/* ---------- Focus states (accessibility) ---------- */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+}
+
+h2.display-3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    color: var(--ink);
+}
+
+/* ---------- "Ons verhaal" pagina ---------- */
+.story-hero {
+    position: relative;
+    background:
+        linear-gradient(160deg, rgba(30, 21, 14, 0.75), rgba(43, 30, 20, 0.35) 55%, rgba(30, 21, 14, 0.8)),
+        url("Images/ourstory-banner.jpg") center 30% / cover no-repeat;
+    height: 46vh;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--cream);
+}
+
+.story-hero h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    letter-spacing: 0.02em;
+    margin: 0.6rem 0 0;
+}
+
+.story-content {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: var(--ink);
+}
+
+.story-content p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 3.4rem;
+    font-weight: 600;
+    float: left;
+    line-height: 0.85;
+    padding: 0.05em 0.08em 0 0;
+    color: var(--brass);
+}
+
+.story-content p + p {
+    margin-top: 1.3rem;
+}
+
+/* ---------- our-story.html ---------- */
+.story-hero {
+    background:
+        linear-gradient(160deg, rgba(30, 21, 14, 0.75), rgba(43, 30, 20, 0.45) 55%, rgba(30, 21, 14, 0.8)),
+        url("Images/ourstory-banner.jpg") center 30% / cover no-repeat;
+    padding: 130px 20px 70px;
+}
+
+.story-hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+}
+
+.story-content {
+    max-width: 720px;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: #3E2F22;
+}
+
+.story-content strong {
+    color: var(--ink);
 }
