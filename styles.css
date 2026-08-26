@@ -12,11 +12,16 @@
 
 :root {
     /* legacy names, new values */
-    --arbora-beige: #ECE4D2;       /* warm linen background */
-    --arbora-bruin: #3B2A1D;       /* ink-walnut, primary text/brand */
-    --arbora-groen: #F7F2E6;       /* section surface (kept name for compatibility) */
-    --arbora-lichtgroen: #F1EAD8;  /* lighter surface */
-    --arbora-accent: #8C6A32;      /* aged brass accent */
+    --arbora-beige: #ECE4D2;
+    /* warm linen background */
+    --arbora-bruin: #3B2A1D;
+    /* ink-walnut, primary text/brand */
+    --arbora-groen: #F7F2E6;
+    /* section surface (kept name for compatibility) */
+    --arbora-lichtgroen: #F1EAD8;
+    /* lighter surface */
+    --arbora-accent: #8C6A32;
+    /* aged brass accent */
 
     /* descriptive aliases, same values */
     --ink: var(--arbora-bruin);
@@ -173,6 +178,7 @@ a {
         opacity: 0;
         transform: translateY(14px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -180,7 +186,12 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-eyebrow, .hero h1, .hero p.lead, .grain-divider, .reveal {
+
+    .hero-eyebrow,
+    .hero h1,
+    .hero p.lead,
+    .grain-divider,
+    .reveal {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
@@ -240,11 +251,11 @@ section#projecten {
 }
 
 /* thin wood-grain rule between sections instead of hard edges */
-section + section {
+section+section {
     position: relative;
 }
 
-section + section::before {
+section+section::before {
     content: "";
     display: block;
     position: absolute;
@@ -252,13 +263,11 @@ section + section::before {
     left: 0;
     right: 0;
     height: 1px;
-    background: repeating-linear-gradient(
-        90deg,
-        rgba(59, 42, 29, 0.18) 0px,
-        rgba(59, 42, 29, 0.18) 6px,
-        transparent 6px,
-        transparent 14px
-    );
+    background: repeating-linear-gradient(90deg,
+            rgba(59, 42, 29, 0.18) 0px,
+            rgba(59, 42, 29, 0.18) 6px,
+            transparent 6px,
+            transparent 14px);
 }
 
 /* ---------- Project cards & material tags ---------- */
@@ -495,7 +504,7 @@ h2.display-3 {
     color: var(--brass);
 }
 
-.story-content p + p {
+.story-content p+p {
     margin-top: 1.3rem;
 }
 
@@ -521,4 +530,228 @@ h2.display-3 {
 
 .story-content strong {
     color: var(--ink);
+}
+
+#materialen {
+    --wood-oak: #b9895a;
+    --wood-oak-dark: #8a5f38;
+    --wood-walnut: #4a2f22;
+    --wood-walnut-light: #6d4530;
+    --wood-cream: #f6f1ea;
+    --wood-line: #e2d8cb;
+    background-color: var(--wood-cream);
+}
+
+#materialen .materials-intro {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#materialen .materials-subhead {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wood-oak-dark);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#materialen .wood-card {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 2px 18px rgba(74, 47, 34, 0.06);
+}
+
+#materialen .wood-card-swatch {
+    height: 140px;
+    width: 100%;
+}
+
+#materialen .wood-card-swatch.walnut {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)),
+        url('Images/Rubiomonocoat/OIL_PLUS_2C_WALNUT_NATURAL-jpg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#materialen .wood-card-swatch.oak {
+        background-image:
+        linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)),
+        url('Images/Rubiomonocoat/OIL_PLUS_2C_OAK_NATURAL-jpg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+#materialen .wood-card-body {
+    padding: 1.5rem;
+}
+
+#materialen .wood-card-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.9rem;
+}
+
+#materialen .wood-trait {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.93rem;
+    line-height: 1.45;
+}
+
+#materialen .wood-trait strong {
+    flex: 0 0 auto;
+    color: var(--wood-oak-dark);
+    font-weight: 600;
+}
+
+#materialen .wood-note {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--wood-line);
+    font-size: 0.88rem;
+    font-style: italic;
+    color: #6b5d4f;
+}
+
+#materialen .species-footnote {
+    text-align: center;
+    max-width: 620px;
+    margin: 2.5rem auto 0;
+    font-size: 0.95rem;
+    color: #6b5d4f;
+}
+
+#materialen .finish-panel {
+    background: #fff;
+    border-radius: 6px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 18px rgba(74, 47, 34, 0.06);
+}
+
+#materialen .finish-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+    margin: 1.75rem 0;
+}
+
+#materialen .finish-swatch {
+    flex: 1 1 140px;
+    max-width: 160px;
+    text-align: center;
+}
+
+#materialen .finish-swatch-color {
+    height: 110px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.6rem;
+    object-fit: cover;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+    background-color: var(--wood-cream);
+    display: block;
+}
+
+#materialen .finish-swatch-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--wood-walnut);
+    display: block;
+}
+
+#materialen .finish-swatch-desc {
+    font-size: 0.78rem;
+    color: #7a6b5c;
+}
+
+#materialen .maintenance-note {
+    display: flex;
+    gap: 0.9rem;
+    background: var(--wood-cream);
+    border-radius: 5px;
+    padding: 1.1rem 1.3rem;
+    margin-top: 1.5rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #4a3d31;
+}
+
+#materialen .idea-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 1.6rem 1.4rem;
+    height: 100%;
+    box-shadow: 0 2px 14px rgba(74, 47, 34, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#materialen .idea-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 22px rgba(74, 47, 34, 0.1);
+}
+
+#materialen .idea-card h4 {
+    font-size: 1.02rem;
+    margin-bottom: 0.4rem;
+    color: var(--wood-walnut);
+}
+
+#materialen .idea-card p {
+    font-size: 0.9rem;
+    color: #6b5d4f;
+    margin-bottom: 0;
+}
+
+#materialen .idea-open {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    color: var(--wood-walnut);
+    font-style: italic;
+}
+
+#materialen .character-panel {
+    background: var(--wood-walnut);
+    color: #f2ece3;
+    border-radius: 6px;
+    padding: 3rem 2.5rem;
+}
+
+#materialen .character-panel h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+#materialen .character-panel p {
+    color: #e5dcd0;
+}
+
+#materialen .character-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+#materialen .character-tag {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    padding: 0.35rem 0.95rem;
+    font-size: 0.82rem;
+    color: #f2ece3;
+}
+
+#materialen .materials-closing {
+    text-align: center;
+    max-width: 600px;
+    margin: 3rem auto 0;
+    font-size: 1.05rem;
+    color: var(--wood-walnut);
 }
