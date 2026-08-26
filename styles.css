@@ -112,7 +112,7 @@ a {
     position: relative;
     background:
         linear-gradient(160deg, rgba(30, 21, 14, 0.82), rgba(43, 30, 20, 0.55) 55%, rgba(30, 21, 14, 0.85)),
-        url("Images/w07961-small.jpg") center/cover no-repeat;
+        url("Images/w07961-small.webp") center/cover no-repeat;
     color: var(--cream);
     text-align: center;
     padding: 150px 20px 90px;
@@ -503,7 +503,7 @@ h2.display-3 {
 .story-hero {
     background:
         linear-gradient(160deg, rgba(30, 21, 14, 0.75), rgba(43, 30, 20, 0.45) 55%, rgba(30, 21, 14, 0.8)),
-        url("Images/ourstory-banner.jpg") center 30% / cover no-repeat;
+        url("Images/ourstory-banner.webp") center 30% / cover no-repeat;
     padding: 130px 20px 70px;
 }
 
